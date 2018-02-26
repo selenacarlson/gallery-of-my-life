@@ -8,20 +8,27 @@
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="vendors/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
     <title>Gallery of My Life</title>
 </head>
 <body>
     <div ng-controller="GalleryController as gc">
         <div class="jumbotron">
-            <h1>Gallery of My Life</h1>
+            <h1 class="display-3">gallery of [selena]'s life</h1>
         </div>
         <div class="row">
             <div ng-repeat="gallery in gc.galleryArray">
-                <img ng-click="describing=true" ng-hide="describing" ng-src="{{gallery.pic}}" height="300" width="300">
-                <span ng-click="describing=false" ng-show="describing">{{gallery.description}}</span>
-                <br>
-                {{gallery.likes}} people like this!
-                <button ng-click="gc.upVote(gallery)" class="btn-light">&#128077</button>
+                <div ng-if="$index % 3 == 0"></div>
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div><img ng-click="describing=true" ng-hide="describing" ng-src="{{gallery.pic}}" height="300" width="300"></div>
+                    <div class="description" ng-click="describing=false" ng-show="describing">{{gallery.description}}</div>
+                    <br>
+                    <div class="footer">
+                        <button ng-click="gc.upVote(gallery)" class="btn-light">&#128077</button>
+                        {{gallery.likes}} people like this!
+                    </div>
+                </div>
             </div>
         </div>
     </div>  

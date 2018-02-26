@@ -1,0 +1,27 @@
+.description {
+    height: 300px;
+    width: 300px;
+    background-color: #C4F0F2;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 15px;
+    padding-top: 130%;
+}
+
+.footer {
+    width: 300px;
+    margin-bottom: 40px;
+}
+
+.jumbotron {
+    background-color: #6CBEC1;
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+
+h1::first-letter {
+    font-size: 150%;
+}
+
+.row {
+    padding-left: 30px;
+}
