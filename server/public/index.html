@@ -17,9 +17,9 @@
         </div>
         <div class="row">
             <div ng-repeat="gallery in gc.galleryArray">
-                <img ng-src="{{gallery.pic}}" height="300" width="300">
+                <img ng-click="describing=true" ng-hide="describing" ng-src="{{gallery.pic}}" height="300" width="300">
+                <span ng-click="describing=false" ng-show="describing">{{gallery.description}}</span>
                 <br>
-                {{gallery.description}}
                 {{gallery.likes}} people like this!
                 <button ng-click="gc.upVote(gallery)" class="btn-light">&#128077</button>
             </div>
